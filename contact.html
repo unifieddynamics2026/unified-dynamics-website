@@ -158,9 +158,34 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 <script>
 (function(){
   var form=document.getElementById('enquiry'), done=document.getElementById('enquiry-done');
+  var btn=form.querySelector('button[type="submit"]');
+  var err=document.createElement('p');
+  err.setAttribute('role','alert'); err.hidden=true;
+  err.style.cssText='margin:0;color:#B42318;font-weight:500';
+  form.appendChild(err);
   function show(sent){form.hidden=sent; done.hidden=!sent;}
+  function fail(msg){
+    err.textContent='';
+    err.appendChild(document.createTextNode((msg||'Sorry, your enquiry could not be sent.')+' You can also email us at '));
+    var a=document.createElement('a'); a.href='mailto:info@unified-dynamics.in'; a.textContent='info@unified-dynamics.in';
+    err.appendChild(a); err.appendChild(document.createTextNode('.'));
+    err.hidden=false;
+  }
   if (new URLSearchParams(location.search).get('sent')==='1') show(true);
-  document.getElementById('enquiry-reset').addEventListener('click',function(){form.reset();history.replaceState(null,'','contact.html');show(false);});
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    err.hidden=true;
+    var label=btn.textContent; btn.disabled=true; btn.textContent='Sending…';
+    fetch('https://formsubmit.co/ajax/info@unified-dynamics.in',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(d){
+        if(!r.ok || d.success===false || d.success==='false'){throw new Error(d.message||'');}
+        return d;
+      });})
+      .then(function(){form.reset(); show(true); done.scrollIntoView({behavior:'smooth',block:'center'});})
+      .catch(function(x){fail(x && x.message ? x.message : '');})
+      .then(function(){btn.disabled=false; btn.textContent=label;});
+  });
+  document.getElementById('enquiry-reset').addEventListener('click',function(){history.replaceState(null,'','contact.html');show(false);});
 })();
 </script>
 </body>
