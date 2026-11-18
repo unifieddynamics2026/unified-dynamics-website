@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A2B42"/>
+      <stop offset="1" stop-color="#14233A"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6EE3CF"/>
+      <stop offset="1" stop-color="#0B6B5E"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6EE3CF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#6EE3CF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- dot grid -->
+  <g fill="#2A3D57">
+    <circle cx="40" cy="40" r="1.6"/><circle cx="72" cy="40" r="1.6"/><circle cx="104" cy="40" r="1.6"/><circle cx="136" cy="40" r="1.6"/>
+    <circle cx="40" cy="72" r="1.6"/><circle cx="72" cy="72" r="1.6"/><circle cx="104" cy="72" r="1.6"/><circle cx="136" cy="72" r="1.6"/>
+    <circle cx="40" cy="104" r="1.6"/><circle cx="72" cy="104" r="1.6"/><circle cx="104" cy="104" r="1.6"/>
+    <circle cx="456" cy="392" r="1.6"/><circle cx="488" cy="392" r="1.6"/><circle cx="520" cy="392" r="1.6"/>
+    <circle cx="456" cy="424" r="1.6"/><circle cx="488" cy="424" r="1.6"/><circle cx="520" cy="424" r="1.6"/>
+    <circle cx="488" cy="456" r="1.6"/><circle cx="520" cy="456" r="1.6"/>
+  </g>
+
+  <!-- connector lines -->
+  <g fill="none" stroke="#3A5272" stroke-width="2" stroke-dasharray="6 6">
+    <path d="M110 120 H150 V170"/>
+    <path d="M470 110 H430 V160"/>
+    <path d="M90 400 H150 V350"/>
+    <path d="M480 390 H430 V340"/>
+  </g>
+
+  <!-- main dashboard window -->
+  <rect x="140" y="150" width="300" height="210" rx="14" fill="url(#panel)" stroke="#33496A" stroke-width="2"/>
+  <rect x="140" y="150" width="300" height="34" rx="14" fill="#22354F"/>
+  <rect x="140" y="170" width="300" height="14" fill="#22354F"/>
+  <circle cx="160" cy="167" r="4.5" fill="#6EE3CF"/>
+  <circle cx="176" cy="167" r="4.5" fill="#4A6283"/>
+  <circle cx="192" cy="167" r="4.5" fill="#4A6283"/>
+  <rect x="300" y="162" width="120" height="10" rx="5" fill="#2E4463"/>
+
+  <!-- sidebar -->
+  <rect x="156" y="200" width="56" height="8" rx="4" fill="#6EE3CF"/>
+  <rect x="156" y="218" width="48" height="8" rx="4" fill="#3A5272"/>
+  <rect x="156" y="236" width="52" height="8" rx="4" fill="#3A5272"/>
+  <rect x="156" y="254" width="40" height="8" rx="4" fill="#3A5272"/>
+  <rect x="156" y="272" width="50" height="8" rx="4" fill="#3A5272"/>
+
+  <!-- KPI tiles -->
+  <rect x="228" y="198" width="92" height="44" rx="8" fill="#22354F"/>
+  <rect x="238" y="208" width="40" height="6" rx="3" fill="#4A6283"/>
+  <rect x="238" y="222" width="60" height="10" rx="5" fill="#E6EBF2"/>
+  <rect x="330" y="198" width="94" height="44" rx="8" fill="#22354F"/>
+  <rect x="340" y="208" width="40" height="6" rx="3" fill="#4A6283"/>
+  <rect x="340" y="222" width="52" height="10" rx="5" fill="#6EE3CF"/>
+
+  <!-- bar chart -->
+  <rect x="228" y="252" width="92" height="94" rx="8" fill="#22354F"/>
+  <rect x="240" y="306" width="10" height="30" rx="3" fill="url(#bar)"/>
+  <rect x="256" y="290" width="10" height="46" rx="3" fill="url(#bar)"/>
+  <rect x="272" y="298" width="10" height="38" rx="3" fill="url(#bar)"/>
+  <rect x="288" y="276" width="10" height="60" rx="3" fill="url(#bar)"/>
+  <rect x="304" y="266" width="10" height="70" rx="3" fill="url(#bar)"/>
+
+  <!-- line chart -->
+  <rect x="330" y="252" width="94" height="94" rx="8" fill="#22354F"/>
+  <path d="M340 326 L356 312 L372 318 L388 296 L404 300 L414 280 L414 336 L340 336 Z" fill="url(#area)"/>
+  <path d="M340 326 L356 312 L372 318 L388 296 L404 300 L414 280" fill="none" stroke="#6EE3CF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="414" cy="280" r="4" fill="#6EE3CF"/>
+
+  <!-- node: cloud (top left) -->
+  <rect x="40" y="86" width="72" height="72" rx="16" fill="#1A2B42" stroke="#33496A" stroke-width="2"/>
+  <path d="M60 132 h32 a10 10 0 0 0 0-20 a14 14 0 0 0-27-3 a9 9 0 0 0-5 23 z" fill="none" stroke="#6EE3CF" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- node: database (top right) -->
+  <rect x="468" y="76" width="72" height="72" rx="16" fill="#1A2B42" stroke="#33496A" stroke-width="2"/>
+  <ellipse cx="504" cy="98" rx="16" ry="6" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+  <path d="M488 98 v26 c0 3.3 7.2 6 16 6 s16-2.7 16-6 v-26" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+  <path d="M488 111 c0 3.3 7.2 6 16 6 s16-2.7 16-6" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+
+  <!-- node: code (bottom left) -->
+  <rect x="20" y="364" width="72" height="72" rx="16" fill="#1A2B42" stroke="#33496A" stroke-width="2"/>
+  <path d="M46 388 l-12 12 12 12 M66 388 l12 12-12 12 M60 384 l-8 32" fill="none" stroke="#6EE3CF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- node: API / integration (bottom right) -->
+  <rect x="478" y="354" width="72" height="72" rx="16" fill="#1A2B42" stroke="#33496A" stroke-width="2"/>
+  <circle cx="500" cy="390" r="6" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+  <circle cx="528" cy="374" r="6" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+  <circle cx="528" cy="406" r="6" fill="none" stroke="#6EE3CF" stroke-width="2.5"/>
+  <path d="M505 387 l17-10 M505 393 l17 10" stroke="#6EE3CF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- gear badge -->
+  <circle cx="440" cy="150" r="22" fill="#0B6B5E" stroke="#0E1B2C" stroke-width="4"/>
+  <circle cx="440" cy="150" r="6" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M440 136 v5 M440 159 v5 M426 150 h5 M449 150 h5 M430 140 l3.5 3.5 M446.5 156.5 l3.5 3.5 M430 160 l3.5-3.5 M446.5 143.5 l3.5-3.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- check badge -->
+  <circle cx="140" cy="360" r="20" fill="#6EE3CF" stroke="#0E1B2C" stroke-width="4"/>
+  <path d="M131 360 l6 6 12-12" fill="none" stroke="#0E1B2C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://unified-dynamics.in/sitemap.xml
