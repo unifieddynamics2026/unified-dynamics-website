@@ -22,6 +22,12 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 .flink{color:#C7D0DC;text-decoration:none}.flink:hover{color:#FFFFFF}
 @media (max-width:960px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.grid2,.grid4{grid-template-columns:minmax(0,1fr)}.hero-h{font-size:38px !important}}
+/* responsive: tablet & phone */
+.nav-toggle{display:none}
+@media (max-width:960px){.hero-art{max-width:560px}}
+@media (min-width:961px) and (max-width:1180px){.grid5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:768px){.nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid #E3E7ED;border-radius:8px;background:#FFFFFF;color:#0E1B2C;cursor:pointer}.site-nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:0 !important;padding:8px 0 4px}.site-nav.open{display:flex !important}.site-nav a.lnk{padding:14px 4px;border-top:1px solid #EEF1F5}.site-nav .btn{margin-top:12px}section[style*="padding: 104px 0"],section[style*="padding: 96px 0"],section[style*="padding: 88px 0"],section[style*="padding: 80px 0"],section[style*="padding: 160px 0"]{padding-top:64px !important;padding-bottom:64px !important}section[style*="padding: 0 0 104px"],section[style*="padding: 0 0 96px"]{padding-bottom:64px !important}.hero{padding-top:56px !important;padding-bottom:64px !important}footer{padding-top:56px !important}}
+@media (max-width:640px){.wrap{padding:0 20px}div[style*="padding: 64px 56px"],div[style*="padding: 56px;"],div[style*="padding: 56px\""]{padding:32px 24px !important}div[style*="padding: 48px;"],div[style*="padding: 48px\""],div[style*="padding: 44px"]{padding:28px 22px !important}h2[style*="font-size: 42px"],h2[style*="font-size: 40px"]{font-size:32px !important}h2[style*="font-size: 36px"],h2[style*="font-size: 34px"]{font-size:28px !important}}
 </style>
 <style>[hidden]{display:none !important}</style>
 </head>
@@ -33,7 +39,8 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 <a href="index.html" style="display: flex; align-items: center; text-decoration: none; min-height: 44px">
 <img src="logo.svg" alt="Unified Dynamics Solutions — home" style="height: 48px; width: auto; display: block">
 </a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav id="site-nav" class="site-nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <a class="lnk" href="index.html">Home</a>
 <a class="lnk" href="about.html" aria-current="page" style="color: #0B6B5E">About Us</a>
 <a class="lnk" href="services.html">Services</a>
@@ -145,5 +152,8 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 </footer>
 
 </div>
+<script>
+(function(){var b=document.querySelector(".nav-toggle"),n=document.getElementById("site-nav");if(!b||!n)return;b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu");});})();
+</script>
 </body>
 </html>
