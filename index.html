@@ -18,11 +18,14 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;text-decoration:none;font-size:16px}
 .btn-p{background:#0B6B5E;color:#FFFFFF}.btn-p:hover{background:#08493F;color:#FFFFFF}
 .btn-o{border:1.5px solid #FFFFFF;color:#FFFFFF}.btn-o:hover{background:#FFFFFF;color:#0E1B2C}
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px;align-items:center}
+.hero{background:linear-gradient(100deg,#0A1D37 0%,#06204A 45%,#021C3D 100%)}
+.hero-art{width:100%;max-width:640px;height:auto;justify-self:end;display:block;-webkit-mask-image:radial-gradient(ellipse 58% 56% at 52% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 58% 56% at 52% 50%,#000 55%,transparent 100%)}
+.btn-cta{border-radius:999px;background:linear-gradient(90deg,#1A9E6E,#0B7A5E);color:#FFFFFF;gap:8px;padding:0 28px;box-shadow:0 6px 20px rgba(26,158,110,.35)}.btn-cta:hover{background:linear-gradient(90deg,#15885E,#08624B);color:#FFFFFF}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
 .flink{color:#C7D0DC;text-decoration:none}.flink:hover{color:#FFFFFF}
-@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:960px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-art{justify-self:center}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.grid3,.grid5{grid-template-columns:minmax(0,1fr)}.hero-h{font-size:40px !important}}
 </style>
 <style>[hidden]{display:none !important}</style>
@@ -45,20 +48,20 @@ a{color:#0B6B5E}a:hover{color:#08493F}
 </div>
 </header>
 
-<section style="background: #0E1B2C; color: #FFFFFF; padding: 112px 0 120px">
+<section class="hero" style="color: #FFFFFF; padding: 96px 0 104px">
 <div class="wrap hero-grid">
-<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 28px; position: relative; z-index: 1">
 <div style="font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6EE3CF">Microsoft Dynamics 365 Finance &amp; Operations</div>
-<h1 class="hero-h" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.08; max-width: 880px">Empowering Businesses with Microsoft Dynamics 365</h1>
+<h1 class="hero-h" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 54px; line-height: 1.08; max-width: 880px">Empowering Businesses with Microsoft Dynamics 365</h1>
 <p style="margin: 0; font-size: 20px; color: #E6EBF2; max-width: 760px">Your trusted partner for Microsoft Dynamics 365 Finance &amp; Operations solutions.</p>
 <p style="margin: 0; font-size: 17px; color: #C7D0DC; max-width: 760px">At Unified Dynamics, we help organizations streamline business operations, improve efficiency, and unlock the full potential of Microsoft Dynamics 365 Finance &amp; Operations. From implementation and customization to integration, optimization, and ongoing technical support, we deliver solutions that align technology with your business goals.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px">
-<a class="btn btn-p" href="services.html">Explore Our Services</a>
-<a class="btn btn-o" href="contact.html">Talk to Our Experts</a>
+<a class="btn btn-cta" href="contact.html">Contact Us <span aria-hidden="true">→</span></a>
+<a class="btn btn-o" href="services.html">Explore Our Services</a>
 </div>
-<div style="margin-top: 32px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: #6EE3CF">Our Expertise. Your Business Growth.</div>
+<div style="margin-top: 24px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: #6EE3CF">Our Expertise. Your Business Growth.</div>
 </div>
-<img src="hero-tech.svg" alt="Illustration of a business dashboard connected to cloud, database, code and integration services" style="width: 100%; max-width: 560px; height: auto; justify-self: center">
+<img class="hero-art" src="hero-banner.webp" width="812" height="545" alt="Laptop showing Microsoft Dynamics 365 Finance &amp; Operations, surrounded by icons for AI, analytics, settings, data and products">
 </div>
 </section>
 
